@@ -1,0 +1,24 @@
+﻿@*@model List<products>*@
+@foreach (Products item in Model)
+{
+    <div  class="card" style="width:300px;display:inline-block;">
+        <img class="card-img-top" src="/images/@item.ProdectImage" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@item.ProdectName
+                
+            </h4>
+            <p class="card-text">@item.ProdectDescription -@item.Price</p>
+           <a href="" class="btn btn-primary">Add To Card</a>
+            @*@Html.ActionLink("Edit", "Edit", new {  id=item.Id })*@
+        </div>
+    </div>
+
+}
+@*<div class="card" style="width:400px">
+    <img class="card-img-top" src="/images/@Model.ProdectImage" alt="Card image" style="width:100%">
+    <div class="card-body">
+        <h4 class="card-title">@Model.ProdectName</h4>
+        <p class="card-text">@Model.ProdectDescription -@Model.Price</p>
+        <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+</div>*@

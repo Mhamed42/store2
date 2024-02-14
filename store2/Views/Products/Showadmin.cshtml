@@ -1,0 +1,20 @@
+﻿@*@model List<products>*@
+@foreach (Products item in Model)
+{
+        <div  class="card" style="width:300px;display:inline-block;">
+            <img class="card-img-top" src="/images/@item.ProdectImage" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">@item.ProdectName
+
+                </h4>
+                <p class="card-text">@item.ProdectDescription -@item.Price</p>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) 
+
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Id},
+                new{onclick="return confirm('are you sur Delete..?')"})
+             @* <a href="#" class="btn btn-primary">Update</a>*@
+            @* <a href="Products" class="btn btn-danger">Delete</a>*@
+            </div>
+        </div>
+
+}
